@@ -12,7 +12,7 @@ run: |
 uses: aws-actions/configure-aws-credentials@v4
 with:
   aws-region: us-east-2
-  aws-access-key-id: AKIAIOSFODNN7EXAMPLE
+  aws-access-key-id: AKIAVZVK987ETR6WTYML
   aws-secret-access-key:  wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
   aws-session-token: ${{ steps.creds.outputs.aws-session-token }}
   role-to-assume: arn:aws:iam::123456789100:role/my-other-github-actions-role
