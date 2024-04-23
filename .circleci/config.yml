@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  scan-secrets:
+    docker:
+      - image: trufflesecurity/trufflehog:latest
+    steps:
+      - checkout
+      - run:
+          name: "Scan for secrets"
+          # change --since-commit to match your default branch 
+          command: trufflehog git file://. --since-commit=HEAD --branch=$CIRCLE_BRANCH --fail --max-depth=80
+
+workflows:
+  scan-secret:
+    jobs:
+      - scan-secrets
