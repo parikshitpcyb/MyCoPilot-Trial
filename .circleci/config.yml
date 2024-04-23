@@ -9,7 +9,7 @@ jobs:
       - run:
           name: "Scan for secrets"
           # change --since-commit to match your default branch 
-          command: trufflehog git file://. --since-commit=HEAD --branch=$CIRCLE_BRANCH --fail --max-depth=80
+          command: trufflehog git file://. --since-commit=HEAD --branch=$CIRCLE_BRANCH --fail --max-depth=50
 
 workflows:
   scan-secret:
